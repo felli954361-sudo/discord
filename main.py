@@ -12,7 +12,6 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
 intents.members = True
-bot = TrainBot()
 TOKEN = os.environ.get("DISCORD_TOKEN")
 # Training times per tier (seconds)
 TRAIN_TIME_PER_TIER = {
@@ -112,6 +111,7 @@ class TrainBot(commands.Bot):
 async def train(interaction: discord.Interaction, tier: str, unit: str, amount: int, buff: float = None):
     """Slash command: /train tier unit amount"""
     await interaction.response.defer()
+    bot = TrainBot()
     tier_l = tier.lower()
     unit_l = unit.lower()
     if amount <= 0:
@@ -165,4 +165,5 @@ if __name__ == '__main__':
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
 
