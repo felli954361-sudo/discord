@@ -12,7 +12,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
 intents.members = True
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = TrainBot()
 TOKEN = os.environ.get("DISCORD_TOKEN")
 # Training times per tier (seconds)
 TRAIN_TIME_PER_TIER = {
@@ -165,3 +165,4 @@ if __name__ == '__main__':
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
