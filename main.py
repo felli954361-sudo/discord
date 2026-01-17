@@ -111,7 +111,6 @@ class TrainBot(commands.Bot):
 async def train(interaction: discord.Interaction, tier: str, unit: str, amount: int, buff: float = None):
     """Slash command: /train tier unit amount"""
     await interaction.response.defer()
-    bot = TrainBot()
     tier_l = tier.lower()
     unit_l = unit.lower()
     if amount <= 0:
@@ -158,6 +157,7 @@ async def train(interaction: discord.Interaction, tier: str, unit: str, amount: 
     lines.append(f'**Total training time:** {format_seconds(total_seconds)}')
 
     await interaction.followup.send('\n'.join(lines))
+    bot = TrainBot()
 
 
 if __name__ == '__main__':
@@ -165,5 +165,6 @@ if __name__ == '__main__':
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
 
 
