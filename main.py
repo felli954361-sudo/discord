@@ -157,14 +157,15 @@ async def train(interaction: discord.Interaction, tier: str, unit: str, amount: 
     lines.append(f'**Total training time:** {format_seconds(total_seconds)}')
 
     await interaction.followup.send('\n'.join(lines))
-    bot = TrainBot()
-
+    
+bot = TrainBot()
 
 if __name__ == '__main__':
     if not TOKEN:
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
 
 
 
