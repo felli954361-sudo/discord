@@ -59,7 +59,7 @@ def calc_times(tier: str, amount: int, buff_fraction: float = None):
 def format_seconds(seconds: float):
     seconds = int(round(seconds))
     days, rem = divmod(seconds, 86400)
-    hrs, rem = divmod(seconds, 3600)
+    hrs, rem = divmod(rem, 3600)
     mins, secs = divmod(rem, 60)
     parts = []
     if days:
@@ -165,6 +165,7 @@ if __name__ == '__main__':
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
 
 
 
