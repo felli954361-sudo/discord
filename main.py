@@ -15,8 +15,8 @@ intents.members = True
 TOKEN = os.environ.get("DISCORD_TOKEN")
 # Training times per tier (seconds)
 TRAIN_TIME_PER_TIER = {
-    't5': 83,  # 1 minute 23 seconds
-    't4': 56,  # 56 seconds
+    't5': 151,  # 1 minute 23 seconds
+    't4': 102,  # 56 seconds
 }
 TRAINING_BUFF = 0.45  # 45% buff
 
@@ -165,6 +165,7 @@ if __name__ == '__main__':
         print('Error: set DISCORD_TOKEN environment variable before running.')
     else:
         bot.run(TOKEN)
+
 
 
 
